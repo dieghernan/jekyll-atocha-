@@ -5,7 +5,7 @@
     <!--  MIT License-->
     <!-- Docs: https://dieghernan.github.io/chulapa -->
     <!-- Repo: https://github.com/dieghernan/chulapa -->
-    <!-- Page build 2023-12-15 21:03:13 +0100 -->
+    <!-- Page build 2024-01-24 17:14:57 +0100 -->
     <!--Google Structured Data-->
     <script type="application/ld+json">
         {
@@ -1769,111 +1769,28 @@
  </div>
 </div><!-- Footer -->
  <footer class="footer-chulapa text-center mt-0 pt-3">
-<div class="container my-3 pb-2">
- <div class="row">
-   <div class="col-lg-8 offset-lg-2">
-   <div id="welcomments__container" class="welcomments__container"><h3 id="welcomments__comment-count-title" class="welcomments__comments-title">No comments yet!</h3><section id="welcomments__comment-container" class="welcomments__comment-container"></section><form id="welcomments__form" class="welcomments__comment-form" autocomplete="on" action="https://welcomments.io/api/comments" method="post">
-  <input type="hidden" name="website-id" id="website-id" value="XaFqz82GQETRJnLi7verVsyBS" >
-  <input type="hidden" name="replying-to" id="replying-to" >
-  <input type="hidden" name="permalink" id="permalink" value="https://dieghernan.github.io/skins/journal" >
-  <input type="hidden" name="page-slug" id="page-slug" value="journal"/>
- <div class="welcomments__form-group">
-    <textarea rows="5" name="message" id="message" required spellcheck="true" placeholder="Type here..."></textarea>
-   <p class="welcomments__markdown-notice"><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">GitHub-flavored Markdown</a> & a sane subset of HTML is supported.</p>
- </div>
- <div class="welcomments__form-group">
-    <label for="author-name">Name</label>
-    <input type="text" id="author-name" name="author-name" required spellcheck="false" placeholder="Your name">
- </div>
- <div class="welcomments__form-group welcomments__flex">
-   <div class="welcomments__column-left">
-      <label for="author-url">Website <span class="welcomments__optional-notice">(optional)</span></label>
-      <input type="url" id="author-url" name="author-url" placeholder="https://example.com" >
-   </div>
-   <div class="welcomments__column-right">
-      <label for="author-email">Email <span class="welcomments__optional-notice">(optional)</span></label>
-      <input type="email" id="author-email" name="author-email" placeholder="johndoe@example.com" >
-   </div>
- </div>
- <p class="welcomments__email-notice">Fill in your email address if you want to get notified when someone replies to your comment. Your email address is safely stored with strong 256-bit AES encryption. You can unsubscribe from notification emails any time by following a link on the bottom of a reply notification email. Check also your spam folder</p>
-  <button type="submit" class="welcomments__submit-button" id="welcomments__submit-button">Send comment</button>
-</form>
-</div>
-<!--
-  Contains some basic comment section styling, so that you can get started quickly
-  without having to come up with your own CSS if you don't want to.
-                                                                               -->
-<link rel="stylesheet" href="https://dieghernan.github.io/chulapa/assets/css/welcomments.css" />
-<!--
-  Includes the optional Welcomments Javascript file. It enhances the user experience
-  by sending the comment form fields without the user having to leave your site.
-  It also saves the comment to the local storage while your site is being rebuilt so
-  that your users don't get confused and resubmit the same comment multiple times. If
-  there are comments that other users posted that haven't been rebuilt as a part of your
-  site yet, this script also "fills in" them from the Welcomments Pending Comments API.
-  It's gzipped and weighs just about 2.1kB. If you want, you can just delete this line
-  and your comment form works just fine but is a bit less interactive! :-)
-                                                                               -->
-<script defer id="welcomments__script" src="https://cdn.welcomments.io/welcomments.js" ></script>
-<script type="text/javascript">
-  welcomments = {
-    apiUrl: "https://welcomments.io/api",
-    // Updates the "x comments" title when there are comments that are dynamically loaded.
-    // By default, the result of this function becomes the innerText of an element with the
-    // id "welcomments__comment-count-title". It's okay if that element doesn't exist.
-    commentCountTitleFactory: function (commentCount) {
-      if (commentCount === 0) {
-        return "No comments yet!";
-      }
-      return commentCount === 1 ? "One comment" : `${commentCount} comments`;
-    },
-    // Builds comments dynamically when they are not part of the static HTML of the rest of
-    // your Jekyll website yet. Should return the desired HTML as a string. By default, appends
-    // the resulting HTML as a child element into the correct position in an element with the
-    // id "welcomments__comment-container".
-    placeholderCommentFactory: function (comment) {
-      var year = new Intl.DateTimeFormat("en", {year: "numeric"}).format(comment.date);
-      var month = new Intl.DateTimeFormat("en", {month: "long"}).format(comment.date);
-      var day = new Intl.DateTimeFormat("en", {day: "2-digit"}).format(comment.date);
-      var avatarUrl =  comment.author.avatar_url ||
-        `https://eu.ui-avatars.com/api/?background=random&name=${comment.author.name}`
-      return `<article
-  id="welcomments__comment-${comment.id}"
-  class="welcomments__comment"
-  data-comment-id="${comment.id}"
-  data-author-name="${comment.author.name}"
-  data-nesting-level="0"
-  itemprop="comment" itemscope itemtype="https://schema.org/Comment">
- <div class="welcomments__comment-header">
-   <div class="welcomments__author-avatar">
-      <img class="welcomments__author-avatar-img" src="${avatarUrl}" alt="${comment.author.name}">
-   </div>
-   <div class="welcomments__author-information">
-     <div class="welcomments__author-name-and-time">
-       <h3 class="welcomments__author-name" itemprop="author" itemscope itemtype="https://schema.org/Person">
-          <span itemprop="name">${comment.author.name}</span><a href="${comment.author.website}" class="mx-2" title="${comment.author.name} url"><span class="sr-only">${comment.author.name} url</span><i class="fas fa-link fa-xs" aria-hidden="true"></i></a></h3>
-       <p class="welcomments__comment-time">
-          <a href="#welcomments__comment-${comment.id}" itemprop="url">
-            <time datetime="" itemprop="datePublished">${month} ${day}, ${year}</time>
-          </a>
-       </p>
-     </div>
-   </div>
- </div>
- <div itemprop="text" class="welcomments__comment-message">${comment.message}</div>
-  <a class="welcomments__comment-reply-link"
-     href="https://welcomments.io/api/websites/XaFqz82GQETRJnLi7verVsyBS/comments/${comment.id}/reply">
-    Reply to ${comment.author.name}
-  </a>
-</article>
-`;
-    },
-  };
-</script>
-   <p class="text-center chulapa-footer-brand mt-4">Comments thanks to <a href="https://welcomments.io/">Welcomments</a>
-   </div>
- </div>
-</div>
+   <div class="container">
+         <div class="row">
+           <div class="col-lg-8 offset-lg-2">
+         <!-- Include the script from  https://giscus.app/ -->
+<script src="https://giscus.app/client.js"
+        data-repo="dieghernan/chulapa"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyNTQ0NjMyOTg="
+        data-category="General"
+        data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyOTI0OTg2"
+        data-mapping="og:title"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="dark_protanopia"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>  
+           </div>
+        </div>
+      </div>
    <div class="container">
      <div class="row">
        <div class="col-xl-10 offset-xl-1"><div role="navigation" class="d-flex flex-wrap justify-content-center"><a href="https://dieghernan.github.io/chulapa/atom.xml" title="footerRSS" class="chulapa-footer-sociallink lead"><span class="fa-stack fa-lg" aria-hidden="true">
